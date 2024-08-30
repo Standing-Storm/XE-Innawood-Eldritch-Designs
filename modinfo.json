@@ -1,14 +1,12 @@
-
 [
-  {
-    "type": "MOD_INFO",
-    "id": "xe_innawood_eldritch_designs",
-    "name": "Xedra Evolved Innawoods: <color_magenta>Eldritch Designs</color>",
-    "authors": [ "StandingStorm" ],
-    "maintainers": [ "StandingStorm" ],
-    "description": "Using the CBM system, add magical tattoos to Innawoods.",
-    "category": "magical",
-    "dependencies": [ "xedra_evolved_innawoods" ]
-  }
+  {
+    "type": "MOD_INFO",
+    "id": "xe_innawood_eldritch_designs",
+    "name": "Xedra Evolved Innawoods: <color_magenta>Eldritch Designs</color>",
+    "authors": [ "StandingStorm" ],
+    "maintainers": [ "StandingStorm" ],
+    "description": "Using the CBM system, add magical tattoos to Innawoods.",
+    "category": "magical",
+    "dependencies": [ "xedra_evolved_innawoods" ]
+  }
 ]
-
