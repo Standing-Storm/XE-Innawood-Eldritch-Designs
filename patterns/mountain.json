@@ -5,7 +5,7 @@
     "name": { "str": "Roots of the Mountain" },
     "description": "The first element of the mountain pattern, a series of stylized boulders and trees on the upper legs. It makes your limbs more resilient, providing them with extra armor.",
     "included": true,
-    "occupied_bodyparts": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "occupied_bodyparts": [ [ "leg_l", 3 ], [ "leg_r", 3 ] ],
     "protec": [
       [ "arm_l", { "bash": 4, "cut": 2 } ],
       [ "arm_r", { "bash": 4, "cut": 2 } ],
@@ -53,6 +53,21 @@
         "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
         "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ], 
         "ench_effects": [ { "effect": "effect_mountain_tattoo_three", "intensity": 1 } ],
+      }
+    ]
+  },
+  {
+    "id": "mountain_tattoo_four",
+    "type": "bionic",
+    "name": { "str": "The Caverns Beneath the Mountain" },
+    "description": "The fourth element of the mountain pattern, the fantastic caverns and hidden grottos depicted on the legs.  You regain runic power when underground, proportional to your depth beneath the earth.",
+    "included": true,
+    "occupied_bodyparts": [ [ "leg_l", 8 ], [ "leg_r", 8 ] ],
+    "required_bionic": "mountain_tattoo_three",
+    "enchantments": [
+      {
+        "condition":  { "math": [ "u_val('pos_z')", "<=", "-1" ] },
+        "values": [ { "value": "POWER_TRICKLE", "add": { "math": [ "u_val('pos_z') * -10" ] } } ]
       }
     ]
   }
