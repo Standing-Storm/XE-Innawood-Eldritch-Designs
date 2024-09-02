@@ -145,6 +145,6 @@
   {
     "type": "effect_on_condition",
     "id": "EOC_MOUNTAIN_SIX_OFF",
-    "effect": { "u_remove_item_with": "item_mountain_tattoo_six",
+    "effect": { "u_remove_item_with": "item_mountain_tattoo_six" }
   }
 ]
