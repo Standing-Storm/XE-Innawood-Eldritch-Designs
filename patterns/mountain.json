@@ -29,12 +29,24 @@
     "occupied_bodyparts": [ [ "torso", 10 ] ],
     "required_bionic": "mountain_tattoo_one",
     "flags": [ "BIONIC_TOGGLED" ],
+    "activated_eocs": [ "EOC_MOUNTAIN_TWO_ON" ],
+    "deactivated_eocs": [ "EOC_MOUNTAIN_TWO_OFF" ],
     "enchantments": [
       {
-        "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
+        "condition": { "and": [ { "math": [ "u_mountain_tattoo_two_active", "==", "1" ] }, { "not": { "u_has_weapon" } } ] },
         "values": [ { "value": "ITEM_DAMAGE_BASH", "add": 8 } ]
       }
     ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MOUNTAIN_TWO_ON",
+    "effect": { "math": [ "u_mountain_tattoo_two_active", "=", "1" ] }
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_MOUNTAIN_TWO_OFF",
+    "effect": { "math": [ "u_mountain_tattoo_two_active", "=", "0" ] }
   },
   {
     "id": "mountain_tattoo_three",
@@ -50,7 +62,7 @@
     "flags": [ "BIONIC_TOGGLED" ],
     "enchantments": [
       {
-        "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
+        "condition": "ACTIVE",
         "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ], 
         "ench_effects": [ { "effect": "effect_mountain_tattoo_three", "intensity": 1 } ],
       }
