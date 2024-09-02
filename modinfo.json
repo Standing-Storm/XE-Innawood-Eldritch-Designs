@@ -8,5 +8,11 @@
     "description": "Using the CBM system, add magical tattoos to Innawoods.",
     "category": "magical",
     "dependencies": [ "xedra_evolved_innawoods" ]
+  },
+  {
+    "type": "EXTERNAL_OPTION",
+    "name": "CBM_SLOTS_ENABLED",
+    "stype": "bool",
+    "value": true
   }
 ]
