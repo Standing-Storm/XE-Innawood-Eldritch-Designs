@@ -22,15 +22,37 @@
     "type": "bionic",
     "name": { "str": "Base of the Mountain" },
     "description": "The second element of the mountain pattern, the lower paths and foothills of a mountain on the lower back.  When activated, your unarmed attacks hit harder."
+    "included": true,
     "act_cost": "100 J",
     "react_cost": "100 J",
-    "time": "10 s",
-    "occupied_bodyparts": [ [ "torso", 7 ] ],
+    "time": "1 s",
+    "occupied_bodyparts": [ [ "torso", 10 ] ],
+    "required_bionic": "mountain_tattoo_one",
     "flags": [ "BIONIC_TOGGLED" ],
     "enchantments": [
       {
         "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
         "values": [ { "value": "ITEM_DAMAGE_BASH", "add": 8 } ]
+      }
+    ]
+  },
+  {
+    "id": "mountain_tattoo_three",
+    "type": "bionic",
+    "name": { "str": "Slopes of the Mountain" },
+    "description": "The third element of the mountain pattern, the pathways up the mountain past forest glend and rushing streams, taking up the rest of the lower back.  When activated, you cannot be knocked back, dazed, stunned, or downed."
+    "included": true,
+    "act_cost": "250 J",
+    "react_cost": "250 J",
+    "time": "1 s",
+    "occupied_bodyparts": [ [ "torso", 15 ] ],
+    "required_bionic": "mountain_tattoo_two",
+    "flags": [ "BIONIC_TOGGLED" ],
+    "enchantments": [
+      {
+        "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
+        "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ], 
+        "ench_effects": [ { "effect": "effect_mountain_tattoo_three", "intensity": 1 } ],
       }
     ]
   }
