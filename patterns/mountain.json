@@ -1,0 +1,37 @@
+[
+  {
+    "id": "mountain_tattoo_one",
+    "type": "bionic",
+    "name": { "str": "Roots of the Mountain" },
+    "description": "The first element of the mountain pattern, a series of stylized boulders and trees on the upper legs. It makes your limbs more resilient, providing them with extra armor.",
+    "included": true,
+    "occupied_bodyparts": [ [ "leg_l", 5 ], [ "leg_r", 5 ] ],
+    "protec": [
+      [ "arm_l", { "bash": 4, "cut": 2 } ],
+      [ "arm_r", { "bash": 4, "cut": 2 } ],
+      [ "hand_l", { "bash": 4, "cut": 2 } ],
+      [ "hand_r", { "bash": 4 "cut": 2  } ],
+      [ "leg_l", { "bash": 4, "cut": 2 } ],
+      [ "leg_r", { "bash": 4 "cut": 2  } ],
+      [ "foot_l", { "bash": 4, "cut": 2 } ],
+      [ "foor_r", { "bash": 4, "cut": 2 } ]
+    ]
+  },
+  {
+    "id": "mountain_tattoo_two",
+    "type": "bionic",
+    "name": { "str": "Base of the Mountain" },
+    "description": "The second element of the mountain pattern, the lower paths and foothills of a mountain on the lower back.  When activated, your unarmed attacks hit harder."
+    "act_cost": "100 J",
+    "react_cost": "100 J",
+    "time": "10 s",
+    "occupied_bodyparts": [ [ "torso", 7 ] ],
+    "flags": [ "BIONIC_TOGGLED" ],
+    "enchantments": [
+      {
+        "condition": { "and": [ "ACTIVE", { "not": { "u_has_weapon" } } ] },
+        "values": [ { "value": "ITEM_DAMAGE_BASH", "add": 8 } ]
+      }
+    ]
+  }
+]
