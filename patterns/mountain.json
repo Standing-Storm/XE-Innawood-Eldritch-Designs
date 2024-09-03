@@ -10,9 +10,9 @@
       [ "arm_l", { "bash": 4, "cut": 2 } ],
       [ "arm_r", { "bash": 4, "cut": 2 } ],
       [ "hand_l", { "bash": 4, "cut": 2 } ],
-      [ "hand_r", { "bash": 4 "cut": 2  } ],
+      [ "hand_r", { "bash": 4, "cut": 2 } ],
       [ "leg_l", { "bash": 4, "cut": 2 } ],
-      [ "leg_r", { "bash": 4 "cut": 2  } ],
+      [ "leg_r", { "bash": 4, "cut": 2 } ],
       [ "foot_l", { "bash": 4, "cut": 2 } ],
       [ "foor_r", { "bash": 4, "cut": 2 } ]
     ]
@@ -21,7 +21,7 @@
     "id": "mountain_tattoo_two",
     "type": "bionic",
     "name": { "str": "Base of the Mountain" },
-    "description": "The second element of the mountain pattern, the lower paths and foothills of a mountain on the lower back.  When activated, your unarmed attacks hit harder.  The damage increases as you complete more of the mountain pattern."
+    "description": "The second element of the mountain pattern, the lower paths and foothills of a mountain on the lower back.  When activated, your unarmed attacks hit harder.  The damage increases as you complete more of the mountain pattern.",
     "included": true,
     "act_cost": "100 J",
     "react_cost": "100 J",
@@ -33,7 +33,7 @@
     "deactivated_eocs": [ "EOC_MOUNTAIN_TWO_OFF" ],
     "enchantments": [
       {
-        "condition": { "and": [ { "math": [ "u_mountain_tattoo_two_active", "==", "1" ] }, { "not": { "u_has_weapon" } } ] },
+        "condition": { "and": [ { "math": [ "u_mountain_tattoo_two_active", "==", "1" ] }, { "not": "u_has_weapon" } ] },
         "values": [ { "value": "ITEM_DAMAGE_BASH", "add": { "math": [ "4 + (u_mountain_tattoo_count * 2)" ] } } ]
       }
     ]
@@ -52,7 +52,7 @@
     "id": "mountain_tattoo_three",
     "type": "bionic",
     "name": { "str": "Slopes of the Mountain" },
-    "description": "The third element of the mountain pattern, the pathways up the mountain past forest glend and rushing streams, taking up the rest of the lower back.  When activated, you cannot be knocked back, dazed, stunned, or downed."
+    "description": "The third element of the mountain pattern, the pathways up the mountain past forest glend and rushing streams, taking up the rest of the lower back.  When activated, you cannot be knocked back, dazed, stunned, or downed.",
     "included": true,
     "act_cost": "250 J",
     "react_cost": "250 J",
@@ -63,8 +63,8 @@
     "enchantments": [
       {
         "condition": "ACTIVE",
-        "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ], 
-        "ench_effects": [ { "effect": "effect_mountain_tattoo_three", "intensity": 1 } ],
+        "values": [ { "value": "KNOCKBACK_RESIST", "add": 100 }, { "value": "KNOCKDOWN_RESIST", "add": 100 } ],
+        "ench_effects": [ { "effect": "effect_mountain_tattoo_three", "intensity": 1 } ]
       }
     ]
   },
@@ -80,15 +80,15 @@
       [ "arm_l", { "bash": 4, "cut": 2 } ],
       [ "arm_r", { "bash": 4, "cut": 2 } ],
       [ "hand_l", { "bash": 4, "cut": 2 } ],
-      [ "hand_r", { "bash": 4 "cut": 2  } ],
+      [ "hand_r", { "bash": 4, "cut": 2 } ],
       [ "leg_l", { "bash": 4, "cut": 2 } ],
-      [ "leg_r", { "bash": 4 "cut": 2  } ],
+      [ "leg_r", { "bash": 4, "cut": 2 } ],
       [ "foot_l", { "bash": 4, "cut": 2 } ],
       [ "foor_r", { "bash": 4, "cut": 2 } ]
     ],
     "enchantments": [
       {
-        "condition":  { "math": [ "u_val('pos_z')", "<=", "-1" ] },
+        "condition": { "math": [ "u_val('pos_z')", "<=", "-1" ] },
         "values": [ { "value": "POWER_TRICKLE", "add": { "math": [ "u_val('pos_z') * -10" ] } } ]
       }
     ]
@@ -106,14 +106,8 @@
     "required_bionic": "mountain_tattoo_four",
     "flags": [ "BIONIC_TOGGLED" ],
     "enchantments": [
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "CARDIO_MULTIPLIER", "multiply": 0.5 } ]
-      },
-      {
-        "condition": "ACTIVE",
-        "values": [ { "value": "REGEN_STAMINA", "multiply": 4 } ]
-      }
+      { "condition": "ALWAYS", "values": [ { "value": "CARDIO_MULTIPLIER", "multiply": 0.5 } ] },
+      { "condition": "ACTIVE", "values": [ { "value": "REGEN_STAMINA", "multiply": 4 } ] }
     ]
   },
   {
@@ -130,12 +124,7 @@
     "flags": [ "BIONIC_TOGGLED" ],
     "activated_eocs": [ "EOC_MOUNTAIN_SIX_ON" ],
     "deactivated_eocs": [ "EOC_MOUNTAIN_SIX_OFF" ],
-    "enchantments": [
-      {
-        "condition": "ACTIVE",
-        "values": [ { "value": "SPEED", "multiply": -0.1 } ]
-      }
-    ]
+    "enchantments": [ { "condition": "ACTIVE", "values": [ { "value": "SPEED", "multiply": -0.1 } ] } ]
   },
   {
     "type": "effect_on_condition",
