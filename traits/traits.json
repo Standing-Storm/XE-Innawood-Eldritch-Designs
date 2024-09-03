@@ -3,18 +3,16 @@
     "type": "mutation",
     "id": "TATTOOS_BASIC_TRAIT",
     "name": { "str": "Anima Attunement" },
-    "description": "You have been attuned to anima and can make use of tattoo patterns.  You regain animaq quickly while asleep and very slowly while awake.",
+    "description": "You have been attuned to anima and can make use of tattoo patterns.  You regain anima quickly while asleep and very slowly while awake.",
     "points": 0,
     "player_display": false,
     "valid": false,
     "enchantments": [
+      { "condition": "ALWAYS", "values": [ { "value": "POWER_TRICKLE", "add": 10 } ] },
+      { "condition": { "u_has_effect": "asleep" }, "values": [ { "value": "POWER_TRICKLE", "add": 1000 } ] },
       {
         "condition": "ALWAYS",
-        "values": [ { "value": "POWER_TRICKLE", "add": 10 } ]
-      },
-      {
-        "condition": "ALWAYS",
-        "values": [ { "value": "BIONIC_POWER", "add": { "math": [ "100000000 + (100000000 * ( u_mountain_tattoo_count ) )" ] } ]
+        "values": [ { "value": "BIONIC_POWER", "add": { "math": [ "100000000 + (100000000 * ( u_mountain_tattoo_count ) )" ] } } ]
       }
     ]
   }
