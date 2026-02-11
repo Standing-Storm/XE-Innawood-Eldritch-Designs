@@ -1,0 +1,12 @@
+[
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_RESEARCH_NATURAL_WORLD_MESSAGE",
+    "effect": [ { "u_message": "You've discovered an avenue that deserves further research.", "type": "good" } ]
+  },
+  {
+    "type": "effect_on_condition",
+    "id": "EOC_RESEARCH_NATURAL_WORLD_MESSAGE_COMPLETE",
+    "effect": [ { "u_message": "That's all the patterns of infusion you think you can discover.", "type": "good" } ]
+  }
+]

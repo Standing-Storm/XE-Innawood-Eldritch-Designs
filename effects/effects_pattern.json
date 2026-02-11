@@ -1,6 +1,15 @@
 [
   {
     "type": "effect_type",
+    "id": "effect_flames_tattoo_one",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "rating": "good",
+    "removes_effects": [ "downed" ],
+    "enchantments": [ { "values": [ { "value": "MOVE_SPEED", "multiply": -0.1 }, { "value": "ATTACK_SPEED", "multiply": -0.15 } ] } ]
+  },
+  {
+    "type": "effect_type",
     "id": "effect_mountain_tattoo_three",
     "name": [ "" ],
     "desc": [ "" ],
